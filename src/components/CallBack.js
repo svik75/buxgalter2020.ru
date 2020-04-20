@@ -16,7 +16,25 @@ export default function CallBack () {
    const status = false;
      const fr = firestore.collection('callback').add({date: date, status: status, phone: phone});
       if(fr) {alert('Заявка на обратный звонок отправлена!');}
+     fetch('https://legal-msk.ru/api/mailer/send', {
+			method: 'POST',
+			body: JSON.stringify({
+				title: 'Обратный звонок',
+				body: `Телефон: ${phone}`
+			}),
+			headers: {
+				"Content-type": "application/json; charset=UTF-8"
+			}
+		}).then(response => {
+				return response.json()
+			}).then(json => {
+				this.setState({
+					user:json
+				});
+			});
      setPhone(''); 
+
+
   }
 
 

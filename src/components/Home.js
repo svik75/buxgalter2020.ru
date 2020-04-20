@@ -4,12 +4,13 @@ import Article from './Article';
 import Header from './Header';
 import Footer from './Footer';
 import '../assets/css/main.css';
-import CallMissed from '@material-ui/icons/CallSharp';
 
+const myStyle = {'position': 'relative', 'zIndex': 0};
 
-export default class Home extends Component {
- 
-
+export default class Home extends Component { 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   checkLogin() {
     const login = window.localStorage.getItem('userEmail')
     if (login === null) {
@@ -23,21 +24,16 @@ export default class Home extends Component {
   render() {
     return (
       <div className="is-preload"><br/> <Menu />
-        <div id="wrapper">
-          
-        <a className="center red-text" href="tel:74993977513"> <CallMissed /> +74993977513</a>
+        <div id="wrapper" style={myStyle}>          
         <br/>
           <header id="header">
-             
-
-            <div className="inner">
+            <div className="inner" >
               <a href="/" className="logo">
                 <span className="symbol"><img src="images/logo.svg" alt="" /></span>
                 <span className="title">ООО "Гарант Консалтинг"</span>
               </a>
             </div>
           </header>
-
           <div id="main">
             <div className="inner">
               <Header />
@@ -51,15 +47,14 @@ export default class Home extends Component {
                 <Article title="Подключение к 1С Отчетности" description="Подключим вашу 1С к электронной отчетности" imgSrc="images/pic07.jpg" styleA="style1" descriptionPath='/description7'/>
                 <Article title="Подключение к Астрал-Отчет" description="Сдавайте отчетность в электронном виде через веб браузер" imgSrc="images/pic08.jpg" styleA="style2" descriptionPath='/description8'/>
                 <Article title="Консультации" description="Получите юридическую или бухгалтерскую консультацию" imgSrc="images/pic09.jpg" styleA="style3" descriptionPath='/description9'/>
+                <Article title="Открыть счет" description='Открытие счета в ПАО "ПСБ"' imgSrc="images/pic10.jpg" styleA="style3" descriptionPath='/description10'/>
+
               </section>
-            </div> 
-           
-          </div>
-         
+            </div>            
+          </div>        
         <Footer />
         </div> 
-      </div>
-      
+      </div>     
     );
   }
 }

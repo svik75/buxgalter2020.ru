@@ -15,7 +15,6 @@ import { Router } from 'react-router-dom';
 import {createBrowserHistory} from 'history'
 import {firebaseConfig} from './config/firebaseConfig';
 import rootReducer from './reducer';
-import Helmet from 'react-helmet';
 
 
 const rrfConfig = {

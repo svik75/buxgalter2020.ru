@@ -16,6 +16,8 @@ import Description6 from './components/Descriptions/Description6';
 import Description7 from './components/Descriptions/Description7';
 import Description8 from './components/Descriptions/Description8';
 import Description9 from './components/Descriptions/Description9';
+import Description10 from './components/Descriptions/Description10';
+
 import Auth from './components/Auth/Auth';
 import Callbacks from './components/Admin/callbacks';
 import Users from './components/Admin/users';
@@ -33,7 +35,6 @@ class App extends Component {
 
   checkLogin() {
     const auth = useSelector(state => state.firebase.auth);
-    console.log(' check login');
     if (isEmpty(auth)) {
       this.history.replace('/');
     } else {
@@ -58,7 +59,6 @@ class App extends Component {
           <Route history={history} path='/about' component={About} />
           <Route history={history} path='/auth' component={Auth} />
           <Route history={history} path='/logout' component={Logout} />
-
           <Route history={history} path='/admin' component={Admin} onEnter={this.checkLogin} />
           <Route history={history} path='/lk' component={ResponsiveDrawerUser} onEnter={this.checkLogin} />
           <Route history={history} path='/description1' component={Description1} />
@@ -70,6 +70,8 @@ class App extends Component {
           <Route history={history} path='/description7' component={Description7} />
           <Route history={history} path='/description8' component={Description8} />
           <Route history={history} path='/description9' component={Description9} />
+          <Route history={history} path='/description10' component={Description10} />
+
           <Route history={history} path="/admin/callbacks" Component={Callbacks} />
           <Route history={history} path="/admin/users" Component={Users} />
           <Route history={history} path="/admin/questions" Component={Questions} />

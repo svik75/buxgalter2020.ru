@@ -1,14 +1,11 @@
 import React, { useState} from 'react';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect} from 'react-router-dom';
 import Menu from '../Menu';
 import { isEmpty, isLoaded } from "react-redux-firebase";
 import { useSelector } from 'react-redux'
-import Home from '../Home';
-import ResponsiveDrawerUser from './lk';
-import Admin from '../Admin/Admin';
-import Logout from './Logout';
+
 
 
 

@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import CallMissed from '@material-ui/icons/CallSharp';
 import CallBack from '../CallBack';
 import Menu from '../Menu';
 
 
 export default class Description extends Component {
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+      }
     render() {
         const tStyle = {
-            width: '60%',
+            width: '100%',
             margin: 'auto',
             th: {
                 fontWeight: 'normal',
@@ -25,23 +26,13 @@ export default class Description extends Component {
 
               }
         };
-        const imgStyle = {
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '50%',
-            borderRadius: '8px'
-        };
+        
         const divStyle = {
 
             aligment: 'center',
-            margin: '30px',
-            padding: '30px'
+           
         };
-        const divJustify = {
-
-            textAlign: 'justify'
-        };
+        
         return (
 
             <div style={divStyle}>
@@ -49,8 +40,8 @@ export default class Description extends Component {
             <Menu/>
 
                 <h1>Консультации</h1>
-                <span className="image main"><img style={imgStyle} src="images/pic09.jpg" alt="" /></span>
-                <div style={divJustify}>
+                <span ><img src="images/pic09.jpg" className="imagep" alt="" /></span>
+                <div>
 
                 <p>Мы оказываем консультационные услуги по ведению бухгалтерского и налогового учета в НКО, ООО, ИП. Вы можете получить у нас ответ как правильно сформировать бухгалтерские проводки, заполнить первичные учетные документы, заполнить отчеты, получить ответы на другие вопросы.</p>
                 <p>В юридическую консультацию входит консультационная помощь в прохождении проверок контролирующих органов, юридический анализ документов, консультации по регистрации или внесении изменений в уставные документы.</p>
@@ -83,9 +74,7 @@ export default class Description extends Component {
                         </table>
                         </div></div>
                         <br/>
-                        <a className="center red-text" href="tel:74993977513">Позвоните нам <CallMissed /> +74993977513</a>
-                        <br/>
-                    <p>или</p>
+                        
                     <CallBack />
             </div>
             

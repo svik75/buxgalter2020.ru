@@ -11,13 +11,29 @@ const firestore = useFirestore();
   // ------------------------------------------
   const onSubmit = (e) => {
     e.preventDefault();
-
+    alert('submit');
    // const { uname, phone, message } = this.state;
    const date = new Date();
    const status = false;
    const obj = {status: status, date: date, name: uname, phone: phone, message: message};
   const retF = firestore.collection('claims').add(obj );
   if(retF) {alert('Ваше сообщение отправлено!');}
+  fetch('https://legal-msk.ru/api/mailer/send', {
+			method: 'POST',
+			body: JSON.stringify({
+				title: 'Обратный звонок',
+				body: `Телефон: ${phone}`
+			}),
+			headers: {
+				"Content-type": "application/json; charset=UTF-8"
+			}
+		}).then(response => {
+				return response.json()
+			}).then(json => {
+				this.setState({
+					user:json
+				});
+			});
   setPhone(''); setUname(''); setMessage('');
 
   }
@@ -55,7 +71,7 @@ const firestore = useFirestore();
             </ul>
           </section>
           <ul className="copyright">
-            <li>&copy; Webprog.club 2020. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <li>&copy; ООО "Гарант Консалтинг", 2020. All rights reserved.</li><li>Created by: <a href="https://webprog.club">Webprog.club</a></li>
           </ul>
         </div>
       </footer>

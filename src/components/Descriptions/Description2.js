@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import CallMissed from '@material-ui/icons/CallSharp';
 import Menu from '../Menu';
 import CallBack from '../CallBack';
 
 export default class Description extends Component {
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+      }
     render() {
         const tStyle = {
-            width: '60%',
+            width: '100%',
             margin: 'auto',
             th: {
                 fontWeight: 'normal',
@@ -24,23 +25,13 @@ export default class Description extends Component {
 
               }
         };
-        const imgStyle = {
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '50%',
-            borderRadius: '8px'
-        };
+        
         const divStyle = {
 
             aligment: 'center',
-            margin: '30px',
-            padding: '30px'
+            
         };
-        const divJustify = {
-
-            textAlign: 'justify'
-        };
+        
         return (
 
             <div style={divStyle}>
@@ -48,8 +39,8 @@ export default class Description extends Component {
            <Menu/>
 
                 <h1>Ведение учета ООО</h1>
-                <span className="image main"><img style={imgStyle} src="images/pic02.jpg" alt="" /></span>
-                <div style={divJustify}>
+                <span ><img src="images/pic02.jpg" className="imagep" alt="" /></span>
+                <div >
                 <p>Все коммерческие компании обязаны вести бухгалтерский учет. .
 
 Ведение бухгалтерского учета в ООО обязанность главного бухгалтера, который назначается его руководителем. На малых предприятиях часто генеральный директор и главный бухгалтер — это одно лицо. Но, учет должен вести профессиональный бухгалтер, ведь не всегда генеральный директор является специалистом в области бухгалтерского и налогового учета. Исключением могут стать спецрежимы, где учет довольно прост и под силу даже непрофессионалу.
@@ -81,9 +72,7 @@ export default class Description extends Component {
                         </table>
                         </div></div>
                         <br/>
-                        <a className="center red-text" href="tel:+74993977513">Позвоните нам <CallMissed /> +74993977513</a>
-                        <br/>
-                    <p>или</p>
+                        
                     <CallBack />
             </div>
             

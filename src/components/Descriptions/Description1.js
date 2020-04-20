@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import CallMissed from '@material-ui/icons/CallSharp';
 import CallBack from '../CallBack';
 import Menu from '../Menu';
 
 
 export default class Description extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+      }
 
     render() {
         const tStyle = {
-            width: '60%',
+            width: '100%',
             align: 'center',
-            margin: 'auto',
+            margin: 'auto',              
+
             th: {
                 fontWeight: 'normal',
                 color: '#039',
@@ -26,22 +29,13 @@ export default class Description extends Component {
 
             }
         };
-        const imgStyle = {
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '50%',
-            borderRadius: '8px'
-        };
+        
         const divStyle = {
 
             aligment: 'center',
-            margin: '30px',
-            padding: '30px'
+            
         };
-        const divJustify = {
-            textAlign: 'justify'
-        };
+        
         return (
 
             <div style={divStyle}>
@@ -49,8 +43,8 @@ export default class Description extends Component {
                     <Menu />
 
                     <h1>Бухгалтерский и налоговый учет НКО</h1>
-                    <span className="image main"><img style={imgStyle} src="images/pic01.jpg" alt="" /></span>
-                    <div style={divJustify}>
+                    <span ><img  src="images/pic01.jpg" className="imagep" alt="" /></span>
+                    <div>
                         <p>К некоммерческим организациям, относятся юридические лица, не имеющие в качестве основной цели деятельности извлечение прибыли и не распределяющим полученную прибыль между ее участниками.
         Некоммерческие организации существуют за счет добровольных пожертвований или соответствующего целевого финансирования.
         Кроме уставной деятельности некоммерческие организации вправе осуществлять предпринимательскую деятельность и создавать собственные предприятия в порядке, установленном законодательством РФ.
@@ -89,9 +83,7 @@ export default class Description extends Component {
                         </div>
                     </div>
                     <br />
-                    <a className="center red-text" href="tel:74993977513">Позвоните нам <CallMissed /> +74993977513</a>
-                    <br />
-                    <p>или</p>
+                    
                     <CallBack />
                 </div>
             </div>

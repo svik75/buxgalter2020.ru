@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import CallMissed from '@material-ui/icons/CallSharp';
 import CallBack from '../CallBack';
 import Menu from '../Menu';
 
 
 export default class Description extends Component {
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+      }
     render() {
         const tStyle = {
-            width: '60%',
+            width: '100%',
             margin: 'auto',
             th: {
                 fontWeight: 'normal',
@@ -25,23 +26,13 @@ export default class Description extends Component {
 
               }
         };
-        const imgStyle = {
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '50%',
-            borderRadius: '8px'
-        };
+        
         const divStyle = {
 
             aligment: 'center',
-            margin: '30px',
-            padding: '30px'
+           
         };
-        const divJustify = {
-
-            textAlign: 'justify'
-        };
+       
         return (
 
             <div style={divStyle}>
@@ -49,8 +40,8 @@ export default class Description extends Component {
             <Menu/>
 
                 <h1>Сдача отчетности некоммерческих организаций</h1>
-                <span className="image main"><img style={imgStyle} src="images/pic04.jpg" alt="" /></span>
-                <div style={divJustify}>
+                <span ><img  src="images/pic04.jpg"  className="imagep" alt="" /></span>
+                <div>
 
                 <p>Все некоммерческие организации обязаны вести бухгалтерский учет и сдавать один раз в год бухгалтерский баланс НКО (форма №1),  отчет подтверждающий целевое расходование средств (форма №6). Некоторые НКО сдают отчет о финансовых результатах. Срок сдачи годовой отчетности - до 1 апреля. </p>
                 <p>Также НКО обязаны ежегодно сдавать отчетность в Министерство Юстиции РФ. Предоставление отчетов в Минюст подтверждает намерение НКО работать в текущем году. Отчетность предоставляется до 15 апреля. Не предоставление отчетности в МинЮст приведет к исключению НКО из реестра.</p>
@@ -94,9 +85,8 @@ export default class Description extends Component {
                         </div>
         </div>
         <br/>
-        <a className="center red-text" href="tel:74993977513">Позвоните нам <CallMissed /> +74993977513</a>
-        <br/>
-        <p>или</p>
+       
+    
         <CallBack />
         </div> </div>
         );

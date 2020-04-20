@@ -32,12 +32,7 @@ export default function AdmQueries() {
     }
 };
 
-const divStyle = {
-  justifyContent: 'center',
-  align: 'center',
-  margin: 'auto',
-  width: '50%'
-};
+
 
 // ---------------------------------------- 
 const timestampToDate = (ts) => {

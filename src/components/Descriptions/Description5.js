@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import CallMissed from '@material-ui/icons/CallSharp';
 import CallBack from '../CallBack';
 import Menu from '../Menu';
 
 
 
 export default class Description extends Component {
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+      }
     render() {
         const tStyle = {
-            width: '60%',
+            width: '100%',
             margin: 'auto',
             th: {
                 fontWeight: 'normal',
@@ -26,23 +27,13 @@ export default class Description extends Component {
 
               }
         };
-        const imgStyle = {
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '50%',
-            borderRadius: '8px'
-        };
+        
         const divStyle = {
 
             aligment: 'center',
-            margin: '30px',
-            padding: '30px'
+           
         };
-        const divJustify = {
-
-            textAlign: 'justify'
-        };
+        
         return (
 
             <div style={divStyle}>
@@ -50,8 +41,8 @@ export default class Description extends Component {
             <Menu/>
 
                 <h1>Сдача отчетов ООО и ИП</h1>
-                <span className="image main"><img style={imgStyle} src="images/pic05.jpg" alt="" /></span>
-                <div style={divJustify}>
+                <span ><img src="images/pic05.jpg" className="imagep" alt="" /></span>
+                <div>
 
                 <p>Организации и ИП на ОСНО сдают ежеквартально декларацию НДС, по налогу на прибыль. По сотрудникам ежемесячно - СЗВ-М, ежеквартально - расчет по страховым взносам, 6-НДФЛ, 4-ФСС. Ежегодно сдается отчет о среднесписочной численности, Бухгалтерский баланс (Форма №1), отчет о прибылях и убытках (Форма №2), декларация по НДС, декларация по налогу на прибыль.</p>
                 <p>Организации и ИП на УСН сдают один раз в год декларацию по УСН, но при этом обязаны вести книгу доходов и расходов. В случае наличия в штате сотрудников перечень отчетов для сдачи такой же как и для ОСНО. </p>
@@ -81,9 +72,7 @@ export default class Description extends Component {
                         </div>
         </div>
         <br/>
-        <a className="center red-text" href="tel:74993977513">Позвоните нам <CallMissed /> +74993977513</a>
-        <br/>
-        <p>или</p>
+        
         <CallBack />
         </div> </div>
         );

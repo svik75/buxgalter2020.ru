@@ -3,9 +3,12 @@ import Menu from './Menu';
 
 
 export default class About extends React.Component{
+    componentDidMount() {
+        window.scrollTo(0, 0);
+      }
     render(){
         const tStyle = {
-            width: '60%',
+            width: '100%',
             margin: 'auto',
             th: {
                 fontWeight: 'normal',
@@ -22,31 +25,21 @@ export default class About extends React.Component{
 
               }
         };
-        const imgStyle = {
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '50%',
-            borderRadius: '8px'
-        };
+        
         const divStyle = {
 
             aligment: 'center',
-            margin: '30px',
-            padding: '30px'
+            
         };
-        const divJustify = {
-
-            textAlign: 'justify'
-        };
+        
         return  (
             <div style={divStyle}>
         <div className="inner">
         <Menu />
 
             <h1>О нас</h1>
-            <span className="image main"><img style={imgStyle} src="images/about.jpg" alt="" /></span>
-            <div style={divJustify}>
+            <span ><img  src="images/about.jpg" className="imagep" alt="" /></span>
+            <div>
 
             <p>Наша компания существует с 2012 года. За эти годы мы сдали тысячи отчетов, вели бухгалтерский и налоговый учет тысяч компаний. </p>
             <p>Наша миссия - помощь малому бизнесу в грамотном ведении бухгалтерского учета и сдаче отчетности за приемлемые деньги. Именно отсутствие ошибок при ведении бухучета и заполнении отчетности приводит к нам новых клиентов по рекомендации. </p>

@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { NavLink } from 'react-router-dom';
-import MenuIcon from '@material-ui/icons/Menu';
+import CallMissed from '@material-ui/icons/CallSharp';
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -15,13 +15,22 @@ export default function SimpleMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const myStyle = {
+    position: 'fixed',
+    top: 0,
+    left: '50%',
+    transform: 'translate(-50%, 0)',
+    zIndex: 1000,
+    background: 'white',
+    width: '100%'
+};
 
   return (
-    <div>
+    <div style={myStyle}>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        <MenuIcon />
+        МЕНЮ
       </Button>
-      <Menu
+      <Menu 
         id="simple-menu"
         anchorEl={anchorEl}
         keepMounted
@@ -39,9 +48,11 @@ export default function SimpleMenu() {
         <MenuItem onClick={handleClose}><NavLink to="/description6">Нулевая отчетность</NavLink></MenuItem>
         <MenuItem onClick={handleClose}><NavLink to="/description7">1С Отчетность</NavLink></MenuItem>
         <MenuItem onClick={handleClose}><NavLink to="/description8">Астрал Отчетность</NavLink></MenuItem>
-        <MenuItem onClick={handleClose}><NavLink to="/description9">Консультация</NavLink></MenuItem>
+        <MenuItem onClick={handleClose}><NavLink to="/description10">Открыть счет</NavLink></MenuItem>
 
       </Menu>
+      <br/>
+      <a className="center red-text" href="tel:74993977513" style={{'fontSize':'22px'}}> <CallMissed /> +74993977513</a>
     </div>
   );
 }

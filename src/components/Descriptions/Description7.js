@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import CallMissed from '@material-ui/icons/CallSharp';
 import CallBack from '../CallBack';
 import Menu from '../Menu';
 
 
 
 export default class Description extends Component {
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+      }
     render() {
         const tStyle = {
-            width: '60%',
+            width: '100%',
             margin: 'auto',
             th: {
                 fontWeight: 'normal',
@@ -26,23 +27,13 @@ export default class Description extends Component {
 
               }
         };
-        const imgStyle = {
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '50%',
-            borderRadius: '8px'
-        };
+        
         const divStyle = {
 
             aligment: 'center',
-            margin: '30px',
-            padding: '30px'
+            
         };
-        const divJustify = {
-
-            textAlign: 'justify'
-        };
+        
         return (
 
             <div style={divStyle}>
@@ -50,8 +41,8 @@ export default class Description extends Component {
             <Menu/>
 
                 <h1>Подключение к 1С Отчетности</h1>
-                <span className="image main"><img style={imgStyle} src="images/pic07.jpg" alt="" /></span>
-                <div style={divJustify}>
+                <span ><img src="images/pic07.jpg"className="imagep" alt="" /></span>
+                <div>
 
                 <p>Всю отчетность можно сдавать из 1С. Для этого необходимо прямо из 1С сформировать заявление на подключение.</p>
                 <p>После отправки заявления на подключения сообщите нам ИНН и КПП вашей организации.</p>
@@ -75,9 +66,7 @@ export default class Description extends Component {
                         </table>
                         </div></div>
                         <br/>
-                        <a className="center red-text" href="tel:74993977513">Позвоните нам <CallMissed /> +74993977513</a>
-                        <br/>
-                    <p>или</p>
+                        
                     <CallBack />
             </div>
             

@@ -4,10 +4,12 @@ import CallBack from '../CallBack';
 
 
 export default class Description extends Component {
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+      }
     render() {
         const tStyle = {
-            width: '60%',
+            width: '100%',
             margin: 'auto',
             th: {
                 fontWeight: 'normal',
@@ -24,23 +26,13 @@ export default class Description extends Component {
 
               }
         };
-        const imgStyle = {
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            width: '50%',
-            borderRadius: '8px'
-        };
+        
         const divStyle = {
 
             aligment: 'center',
-            margin: '30px',
-            padding: '30px'
+            
         };
-        const divJustify = {
-
-            textAlign: 'justify'
-        };
+       
         return (
 
             <div style={divStyle}>
@@ -48,8 +40,8 @@ export default class Description extends Component {
             <Menu/>
 
                 <h1>Подключение к Астрал-Отчетности</h1>
-                <span className="image main"><img style={imgStyle} src="images/pic08.jpg" alt="" /></span>
-                <div style={divJustify}>
+                <span ><img  src="images/pic08.jpg" className="imagep" alt="" /></span>
+                <div>
 
                 <p>С Астрал Отчетом вы сможете сдавать отчетность в любой контролирующий орган.</p>
                 <p><b>Персональная доска задач. </b>На главной странице вы сможете отправить отчет, получить требование и ответить на него.</p>
@@ -80,8 +72,8 @@ export default class Description extends Component {
         <br/>
         <p>Нажмите на баннер ниже, зарегистрируйтесь и отправьте заявление на подключение. После проверки ваших документов и идентификации директора вы сразу сможете работать с Астрал-Отчетностью.</p>
         <br/>
-        <div><a href="https://ao.astral.ru/?officeGuid=4a1be33a-695a-471c-819d-24b224bce557">
-                    <img src="https://partner.astral.ru/build/banners/HeaderBanner.svg" alt="Подключиться" /></a></div>
+        <div ><a href="https://ao.astral.ru/?officeGuid=4a1be33a-695a-471c-819d-24b224bce557">
+                    <img style={{'width': '90%'}} src="https://partner.astral.ru/build/banners/HeaderBanner.svg" alt="Подключиться" /></a></div>
         </div> 
         <br/>
         <CallBack />
